@@ -13,6 +13,17 @@ body {
     margin-bottom: 5px;
 }
 
+.link-block {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.link-block .button {
+  display: inline-flex;
+  align-items: center;
+}
+
 .dnerf {
   font-variant: small-caps;
 }

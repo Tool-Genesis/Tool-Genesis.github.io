@@ -175,6 +175,7 @@
         <em><span style="color:#4169E1">Testing Team</span></em> performs adaptive unit testing and simulation-based validation, providing execution-grounded feedback for iterative repair.
       </h2>
       <img src="static/images/method.png" alt="Agent2World overall pipeline"> <!-- To .gif format-->
+      <img src="static/images/Picture1.png" alt="Tool-Genesis overview">
     </div>
   </div>
 </section>
@@ -188,7 +189,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Research on self-evolving language agents progresses, increasing attention has focused on their ability to create, adapt, and maintain tools from task requirements. However, existing benchmarks predominantly rely on pre-defined specifications, which limits scalability and hinders true autonomous evolution. While recent studies attempt to dynamically generate tools, they primarily focus on downstream performance, creating a "black box" evaluation that makes it difficult to accurately attribute the causes of failure.
+            Tool-Genesis is a task-driven benchmark for self-evolving language agents that evaluates whether they can create reusable tools from abstract requirements, rather than simply call predefined APIs. It measures the full tool-creation process—from interface inference and executable implementation to functional validation and downstream utility—providing an execution-grounded view of where tool creation succeeds or fails in practice.
           </p>
           <p>
             To address this, we propose Tool-Genesis, a diagnostic benchmark designed to quantify agent capabilities across multiple dimensions—from interface compliance and functional correctness to downstream utility. It evaluates the ability of agents to construct task-relevant tools solely from abstract requirements (without pre-set specifications) and solve realistic problems.

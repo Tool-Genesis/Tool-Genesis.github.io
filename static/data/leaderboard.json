@@ -1,11 +1,11 @@
 {
   "metrics": [
-    {"key": "compliance", "label": "Compliance", "level": "L1", "higher_better": true},
-    {"key": "exec", "label": "Exec.", "level": "L1", "higher_better": true},
-    {"key": "schema_f1", "label": "Schema-F1", "level": "L2", "higher_better": true},
-    {"key": "ut_soft", "label": "UT_soft", "level": "L3", "higher_better": true},
-    {"key": "ut_hard", "label": "UT_hard", "level": "L3", "higher_better": true},
-    {"key": "sr", "label": "SR", "level": "L4", "higher_better": true}
+    {"key": "compliance", "label": "Compliance", "html": "Compliance ↑", "level": "L1", "higher_better": true},
+    {"key": "exec", "label": "Exec.", "html": "Exec. ↑", "level": "L1", "higher_better": true},
+    {"key": "schema_f1", "label": "Schema-F1", "html": "Schema-F1 ↑", "level": "L2", "higher_better": true},
+    {"key": "ut_soft", "label": "UT_soft", "html": "UT<sub>soft</sub> ↑", "level": "L3", "higher_better": true},
+    {"key": "ut_hard", "label": "UT_hard", "html": "UT<sub>hard</sub> ↑", "level": "L3", "higher_better": true},
+    {"key": "sr", "label": "SR", "html": "SR ↑", "level": "L4", "higher_better": true}
   ],
   "direct": [
     {"family": "OpenAI", "version": "gpt-4o", "compliance": 0.779, "exec": 0.209, "schema_f1": 0.175, "ut_soft": 0.089, "ut_hard": 0.049, "sr": 0.153},

@@ -107,6 +107,11 @@
   color: #ffffff;
 }
 
+/* ===== Section Background ===== */
+.leaderboard-section {
+  background: var(--lb-bg);
+}
+
 /* ===== Main Content ===== */
 .leaderboard-content {
   max-width: 1200px;

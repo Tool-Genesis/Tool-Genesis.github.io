@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="AGENT2WORLD: Learning to Generate Symbolic World Models via Adaptive Multi-Agent Feedback">
+        content="Tool-Genesis: A Task-Driven Tool Creation Benchmark for Self-Evolving Language Agent">
   <meta name="keywords" content="Embodied AI, AI Agents, Large Language Models">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Agent2World: Learning to Generate Symbolic World Models via Adaptive Multi-Agent Feedback</title>
+  <title>Tool-Genesis: A Task-Driven Tool Creation Benchmark for Self-Evolving Language Agent</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -69,49 +69,42 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Agent2World: Learning to Generate Symbolic World Models via Adaptive Multi-Agent Feedback</h1>
+          <h1 class="title is-1 publication-title">Tool-Genesis: A Task-Driven Tool Creation Benchmark for Self-Evolving Language Agent</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=FhVRimUAAAAJ&hl=en&oi=sra">Mengkang Hu</a><sup>1,2</sup>,</span>
-            <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=aYMjYJUAAAAJ&hl=en">Bowei Xia</a><sup>1,3</sup>,</span>
-            <span class="author-block">
-              <a href="https://github.com/wyl8">Yuran Wu</a><sup>1</sup>,
+              <a href="https://scholar.google.com/citations?user=aYMjYJUAAAAJ&hl=en">Bowei Xia</a><sup>1*</sup>,
             </span>
             <span class="author-block">
-              <a href="">Ailing Yu</a><sup>1</sup>,
+              <a href="https://scholar.google.com/citations?user=FhVRimUAAAAJ&hl=en&oi=sra">Mengkang Hu</a><sup>2,3*</sup>,
             </span>
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=9x4sJm8AAAAJ&hl=en">Yude Zou</a><sup>1</sup>,
+              <a href="">Shijian Wang</a><sup>3</sup>,
             </span>
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=8j8AfF0AAAAJ&hl=en&oi=ao">Qiguang Chen</a><sup>4</sup>
+              <a href="https://scholar.google.com/citations?user=unCPHQEAAAAJ&hl=en">Jiarui Jin</a><sup>3</sup>,
             </span>
             <span class="author-block">
-              <a href="">Shijian Wang</a><sup>1</sup>,
+              <a href="https://scholar.google.com/citations?user=CvtODukAAAAJ&hl=en">Wenxiang Jiao</a><sup>3</sup>,
             </span>
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=unCPHQEAAAAJ&hl=en">Jiarui Jin</a><sup>2</sup>
+              <a href="">Yuan Lu</a><sup>3</sup>,
             </span>
             <span class="author-block">
-              <a href="https://icct.uestc.edu.cn/info/1067/1337.htm">Kexin Li</a><sup>3</sup>
+              <a href="https://icct.uestc.edu.cn/info/1067/1337.htm">Kexin Li</a><sup>1&#8224;</sup>,
             </span>
             <span class="author-block">
-              <a href="https://scholar.google.com/citations?user=CvtODukAAAAJ&hl=en">Wenxiang Jiao</a><sup>2</sup>
-            </span>
-            <span class="author-block">
-              <a href="">Yuan Lu</a><sup>2</sup>
-            </span>
-            <span class="author-block">
-              <a href="http://luoping.me/">Ping Luo</a><sup>1</sup>
+              <a href="http://luoping.me/">Ping Luo</a><sup>2&#8224;</sup>
             </span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>The University of Hong Kong,</span>
-            <span class="author-block"><sup>2</sup>Xiaohongshu Inc.</span>
-            <span class="author-block"><sup>3</sup>University of Electronic Science and Technology of China</span>
-            <span class="author-block"><sup>4</sup>Harbin Institute of Technology</span>
+            <span class="author-block"><sup>1</sup>UESTC,</span>
+            <span class="author-block"><sup>2</sup>The University of Hong Kong,</span>
+            <span class="author-block"><sup>3</sup>Xiaohongshu Inc.</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>*</sup>Equal contribution.</span>
+            <span class="author-block"><sup>&#8224;</sup>Corresponding authors.</span>
           </div>
 
           <div class="column has-text-centered">
@@ -195,20 +188,13 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Symbolic world models (e.g., PDDL domains or executable simulators) are central to model-based planning, but training LLMs to generate such world models is limited by the lack of large-scale verifiable supervision.
-            Current approaches rely primarily on static validation methods that fail to catch behavior-level errors arising from interactive execution.
+            Research on self-evolving language agents progresses, increasing attention has focused on their ability to create, adapt, and maintain tools from task requirements. However, existing benchmarks predominantly rely on pre-defined specifications, which limits scalability and hinders true autonomous evolution. While recent studies attempt to dynamically generate tools, they primarily focus on downstream performance, creating a "black box" evaluation that makes it difficult to accurately attribute the causes of failure.
           </p>
           <p>
-            In this paper, we propose <b>Agent2World</b>, a tool-augmented multi-agent framework that achieves strong inference-time world-model generation and also serves as a data engine for supervised fine-tuning, by grounding generation in multi-agent feedback.
-            Agent2World follows a three-stage pipeline:
-            (<i>i</i>) a <em>Deep Researcher</em> agent performs knowledge synthesis via web search to address specification gaps;
-            (<i>ii</i>) a <em>Model Developer</em> agent implements executable world models; and
-            (<i>iii</i>) a specialized <em>Testing Team</em> conducts adaptive unit testing and simulation-based validation.
+            To address this, we propose Tool-Genesis, a diagnostic benchmark designed to quantify agent capabilities across multiple dimensions—from interface compliance and functional correctness to downstream utility. It evaluates the ability of agents to construct task-relevant tools solely from abstract requirements (without pre-set specifications) and solve realistic problems.
           </p>
           <p>
-            Agent2World demonstrates superior inference-time performance across three benchmarks spanning both PDDL and executable code representations, achieving consistent state-of-the-art results.
-            Beyond inference, the <em>Testing Team</em> serves as an interactive environment for the <em>Model Developer</em>, providing behavior-aware adaptive feedback that yields multi-turn training trajectories.
-            Fine-tuning on these trajectories substantially improves world-model generation, yielding an average relative gain of <b>30.95%</b> over the same model before training.
+            Crucially, we find that even state-of-the-art models struggle to construct precise tool interfaces or executable logic in a one-shot setting. These minor initial flaws are amplified through the pipeline, leading to a precipitous drop in downstream metrics. We hope this benchmark will guide future research toward steering models to synthesize persistent, general-purpose tools capable of addressing broader real-world challenges.
           </p>
         </div>
       </div>

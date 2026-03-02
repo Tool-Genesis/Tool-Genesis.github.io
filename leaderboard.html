@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Tool-Genesis Leaderboard: Benchmark results for self-evolving language agents">
+  <meta name="keywords" content="Tool-Genesis, Benchmark, Leaderboard, LLM, Language Agents">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Leaderboard | Tool-Genesis</title>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./static/css/leaderboard.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+</head>
+<body class="leaderboard-page">
+
+  <!-- Hero -->
+  <section class="leaderboard-hero">
+    <a href="./index.html" class="hero-back-link">
+      <i class="fas fa-arrow-left"></i> Back to Project
+    </a>
+    <div class="hero-content">
+      <span class="hero-icon">&#127942;</span>
+      <h1>Tool-Genesis Leaderboard</h1>
+      <p>
+        Benchmark results under two evaluation paradigms (<strong>Direct</strong> and <strong>Code-Agent</strong>).
+        Metrics follow a four-level evaluation: L1 surface compliance, L2 semantic interface fidelity,
+        L3 functional correctness, and L4 downstream task utility.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="leaderboard-content">
+
+    <!-- Tab Toggle -->
+    <div class="tab-container">
+      <div class="tab-toggle">
+        <button class="tab-btn" data-tab="direct">
+          <span class="tab-icon"><i class="fas fa-bolt"></i></span>
+          Direct
+        </button>
+        <button class="tab-btn active" data-tab="code_agent">
+          <span class="tab-icon"><i class="fas fa-robot"></i></span>
+          Code-Agent
+        </button>
+      </div>
+    </div>
+
+    <!-- Sort Info -->
+    <div class="sort-info" id="sort-info">
+      <span>Sorted by <strong>SR</strong> (descending) &middot; Click any column header to sort</span>
+    </div>
+
+    <!-- Table Card -->
+    <div class="table-card">
+      <div class="leaderboard-table-wrapper">
+        <table class="leaderboard-table">
+          <thead id="lb-thead"></thead>
+          <tbody id="lb-tbody"></tbody>
+        </table>
+      </div>
+
+      <!-- Legend -->
+      <div class="legend-bar">
+        <div class="legend-item"><span class="legend-dot l1"></span> L1: Surface Compliance</div>
+        <div class="legend-item"><span class="legend-dot l2"></span> L2: Semantic Interface Fidelity</div>
+        <div class="legend-item"><span class="legend-dot l3"></span> L3: Functional Correctness</div>
+        <div class="legend-item"><span class="legend-dot l4"></span> L4: Downstream Task Utility</div>
+        <div class="legend-item"><span class="legend-dot best"></span> Best in Column</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Metric Description Cards -->
+  <div class="metric-description">
+    <div class="metric-cards">
+      <div class="metric-card card-l1">
+        <span class="level-tag tag-l1">L1</span>
+        <h4>Surface Compliance</h4>
+        <p><strong>Compliance</strong> checks format adherence; <strong>Exec.</strong> (Server Execution) verifies that tools can be loaded and run without errors.</p>
+      </div>
+      <div class="metric-card card-l2">
+        <span class="level-tag tag-l2">L2</span>
+        <h4>Semantic Interface Fidelity</h4>
+        <p><strong>Schema-F1</strong> measures how well the generated tool interface matches the reference specification in terms of parameter names, types, and structure.</p>
+      </div>
+      <div class="metric-card card-l3">
+        <span class="level-tag tag-l3">L3</span>
+        <h4>Functional Correctness</h4>
+        <p><strong>UT<sub>soft</sub></strong> and <strong>UT<sub>hard</sub></strong> evaluate functional correctness via unit tests with soft (partial match) and hard (exact match) criteria.</p>
+      </div>
+      <div class="metric-card card-l4">
+        <span class="level-tag tag-l4">L4</span>
+        <h4>Downstream Task Utility</h4>
+        <p><strong>SR</strong> (Task Success Rate) measures whether the generated tool can actually be used by an agent to solve the original downstream task.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="leaderboard-footer">
+    <p>
+      Data from Table 2 of the Tool-Genesis paper.
+      Want to add your model? Submit results via
+      <a href="https://github.com/Tool-Genesis/Tool-Genesis" target="_blank" rel="noopener">GitHub</a>.
+    </p>
+  </div>
+
+  <script src="./static/js/leaderboard.js"></script>
+</body>
+</html>

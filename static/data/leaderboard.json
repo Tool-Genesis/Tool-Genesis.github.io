@@ -1,0 +1,42 @@
+{
+  "metrics": [
+    {"key": "compliance", "label": "Compliance", "level": "L1", "higher_better": true},
+    {"key": "exec", "label": "Exec.", "level": "L1", "higher_better": true},
+    {"key": "schema_f1", "label": "Schema-F1", "level": "L2", "higher_better": true},
+    {"key": "ut_soft", "label": "UT_soft", "level": "L3", "higher_better": true},
+    {"key": "ut_hard", "label": "UT_hard", "level": "L3", "higher_better": true},
+    {"key": "sr", "label": "SR", "level": "L4", "higher_better": true}
+  ],
+  "direct": [
+    {"family": "OpenAI", "version": "gpt-4o", "compliance": 0.779, "exec": 0.209, "schema_f1": 0.175, "ut_soft": 0.089, "ut_hard": 0.049, "sr": 0.153},
+    {"family": "OpenAI", "version": "gpt-4.1-mini", "compliance": 0.686, "exec": 0.318, "schema_f1": 0.293, "ut_soft": 0.127, "ut_hard": 0.088, "sr": 0.199},
+    {"family": "OpenAI", "version": "gpt-4.1", "compliance": 0.860, "exec": 0.738, "schema_f1": 0.675, "ut_soft": 0.261, "ut_hard": 0.129, "sr": 0.330},
+    {"family": "OpenAI", "version": "gpt-5.1", "compliance": 0.826, "exec": 0.759, "schema_f1": 0.688, "ut_soft": 0.281, "ut_hard": 0.161, "sr": 0.372},
+    {"family": "Anthropic", "version": "claude-haiku-3.5", "compliance": 0.744, "exec": 0.012, "schema_f1": 0.012, "ut_soft": 0.007, "ut_hard": 0.000, "sr": 0.012},
+    {"family": "Google DeepMind", "version": "gemini-3-flash-preview", "compliance": 0.872, "exec": 0.140, "schema_f1": 0.116, "ut_soft": 0.084, "ut_hard": 0.037, "sr": 0.103},
+    {"family": "Qwen3", "version": "235b-a22b-instruct-2507", "compliance": 0.884, "exec": 0.333, "schema_f1": 0.320, "ut_soft": 0.143, "ut_hard": 0.108, "sr": 0.287},
+    {"family": "Qwen3", "version": "32b", "compliance": 0.791, "exec": 0.282, "schema_f1": 0.258, "ut_soft": 0.176, "ut_hard": 0.078, "sr": 0.178},
+    {"family": "Qwen3", "version": "30b-a3b-instruct-2507", "compliance": 0.884, "exec": 0.256, "schema_f1": 0.250, "ut_soft": 0.093, "ut_hard": 0.025, "sr": 0.218},
+    {"family": "Qwen3", "version": "14b", "compliance": 0.791, "exec": 0.186, "schema_f1": 0.175, "ut_soft": 0.154, "ut_hard": 0.075, "sr": 0.128},
+    {"family": "Qwen3", "version": "8b", "compliance": 0.686, "exec": 0.012, "schema_f1": 0.011, "ut_soft": 0.001, "ut_hard": 0.001, "sr": 0.012},
+    {"family": "Qwen3", "version": "4b", "compliance": 0.651, "exec": 0.000, "schema_f1": 0.000, "ut_soft": 0.000, "ut_hard": 0.000, "sr": 0.000},
+    {"family": "DeepSeek", "version": "deepseek-v3.2", "compliance": 0.826, "exec": 0.400, "schema_f1": 0.365, "ut_soft": 0.195, "ut_hard": 0.129, "sr": 0.224},
+    {"family": "MoonshotAI", "version": "Kimi-K2-Instruct", "compliance": 0.860, "exec": 0.372, "schema_f1": 0.342, "ut_soft": 0.144, "ut_hard": 0.087, "sr": 0.215}
+  ],
+  "code_agent": [
+    {"family": "OpenAI", "version": "gpt-4o", "compliance": 0.802, "exec": 0.531, "schema_f1": 0.456, "ut_soft": 0.237, "ut_hard": 0.117, "sr": 0.226},
+    {"family": "OpenAI", "version": "gpt-4.1-mini", "compliance": 0.651, "exec": 0.906, "schema_f1": 0.640, "ut_soft": 0.278, "ut_hard": 0.144, "sr": 0.344},
+    {"family": "OpenAI", "version": "gpt-4.1", "compliance": 0.884, "exec": 0.756, "schema_f1": 0.691, "ut_soft": 0.288, "ut_hard": 0.145, "sr": 0.433},
+    {"family": "OpenAI", "version": "gpt-5.1", "compliance": 0.895, "exec": 0.941, "schema_f1": 0.867, "ut_soft": 0.421, "ut_hard": 0.246, "sr": 0.604},
+    {"family": "Anthropic", "version": "claude-haiku-3.5", "compliance": 0.733, "exec": 0.964, "schema_f1": 0.821, "ut_soft": 0.342, "ut_hard": 0.180, "sr": 0.472},
+    {"family": "Google DeepMind", "version": "gemini-3-flash-preview", "compliance": 0.849, "exec": 0.977, "schema_f1": 0.912, "ut_soft": 0.448, "ut_hard": 0.255, "sr": 0.581},
+    {"family": "Qwen3", "version": "235b-a22b-instruct-2507", "compliance": 0.686, "exec": 0.971, "schema_f1": 0.722, "ut_soft": 0.363, "ut_hard": 0.212, "sr": 0.472},
+    {"family": "Qwen3", "version": "32b", "compliance": 0.860, "exec": 0.892, "schema_f1": 0.801, "ut_soft": 0.317, "ut_hard": 0.179, "sr": 0.495},
+    {"family": "Qwen3", "version": "30b-a3b-instruct-2507", "compliance": 0.744, "exec": 0.913, "schema_f1": 0.694, "ut_soft": 0.336, "ut_hard": 0.187, "sr": 0.410},
+    {"family": "Qwen3", "version": "14b", "compliance": 0.686, "exec": 0.807, "schema_f1": 0.707, "ut_soft": 0.316, "ut_hard": 0.178, "sr": 0.453},
+    {"family": "Qwen3", "version": "8b", "compliance": 0.767, "exec": 0.694, "schema_f1": 0.646, "ut_soft": 0.243, "ut_hard": 0.121, "sr": 0.332},
+    {"family": "Qwen3", "version": "4b", "compliance": 0.651, "exec": 0.326, "schema_f1": 0.285, "ut_soft": 0.127, "ut_hard": 0.058, "sr": 0.181},
+    {"family": "DeepSeek", "version": "deepseek-v3.2", "compliance": 0.872, "exec": 0.744, "schema_f1": 0.702, "ut_soft": 0.330, "ut_hard": 0.195, "sr": 0.449},
+    {"family": "MoonshotAI", "version": "Kimi-K2", "compliance": 0.872, "exec": 0.976, "schema_f1": 0.898, "ut_soft": 0.389, "ut_hard": 0.235, "sr": 0.585}
+  ]
+}

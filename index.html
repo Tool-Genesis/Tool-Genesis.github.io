@@ -32,6 +32,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/leaderboard.css">
   <link rel="icon" href="./static/images/favicon.svg">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -58,7 +59,7 @@
       </span>
       </a>
 
-      <a class="navbar-item" href="./leaderboard.html">
+      <a class="navbar-item" href="#leaderboard">
         <span class="icon">
           <i class="fas fa-trophy"></i>
         </span>
@@ -156,8 +157,8 @@
                   </a>
               </span>
               <span class="link-block">
-                <a href="./leaderboard.html"
-                   class="external-link button is-normal is-rounded is-dark">
+                <a href="#leaderboard"
+                   class="button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-trophy"></i>
                   </span>
@@ -214,6 +215,82 @@
 </section>
 
 
+<!-- Leaderboard -->
+<section class="section" id="leaderboard">
+  <div class="leaderboard-content">
+    <h2 class="title is-3 has-text-centered" style="margin-bottom: 0.8rem;">Leaderboard</h2>
+    <p class="has-text-centered" style="color:#64748b; font-size:0.95rem; max-width:700px; margin:0 auto 1.5rem;">
+      Main results under two evaluation paradigms (<strong>Direct</strong> and <strong>Code-Agent</strong>).
+      Metrics follow a four-level evaluation: L1 surface compliance, L2 semantic interface fidelity,
+      L3 functional correctness, and L4 downstream task utility.
+    </p>
+
+    <!-- Tab Toggle -->
+    <div class="tab-container">
+      <div class="tab-toggle">
+        <button class="tab-btn" data-tab="direct">
+          <span class="tab-icon"><i class="fas fa-bolt"></i></span>
+          Direct
+        </button>
+        <button class="tab-btn active" data-tab="code_agent">
+          <span class="tab-icon"><i class="fas fa-robot"></i></span>
+          Code-Agent
+        </button>
+      </div>
+    </div>
+
+    <!-- Sort Info -->
+    <div class="sort-info" id="sort-info">
+      <span>Sorted by <strong>SR</strong> (descending) &middot; Click any column header to sort</span>
+    </div>
+
+    <!-- Table Card -->
+    <div class="table-card">
+      <div class="leaderboard-table-wrapper">
+        <table class="leaderboard-table">
+          <thead id="lb-thead"></thead>
+          <tbody id="lb-tbody"></tbody>
+        </table>
+      </div>
+
+      <!-- Legend -->
+      <div class="legend-bar">
+        <div class="legend-item"><span class="legend-dot l1"></span> L1: Surface Compliance</div>
+        <div class="legend-item"><span class="legend-dot l2"></span> L2: Semantic Interface Fidelity</div>
+        <div class="legend-item"><span class="legend-dot l3"></span> L3: Functional Correctness</div>
+        <div class="legend-item"><span class="legend-dot l4"></span> L4: Downstream Task Utility</div>
+        <div class="legend-item"><span class="legend-dot best"></span> Best in Column</div>
+      </div>
+    </div>
+
+    <!-- Metric Description Cards -->
+    <div class="metric-description" style="padding:0; margin-top:1.5rem;">
+      <div class="metric-cards">
+        <div class="metric-card card-l1">
+          <span class="level-tag tag-l1">L1</span>
+          <h4>Surface Compliance</h4>
+          <p><strong>Compliance</strong> checks format adherence; <strong>Exec.</strong> (Server Execution) verifies that tools can be loaded and run without errors.</p>
+        </div>
+        <div class="metric-card card-l2">
+          <span class="level-tag tag-l2">L2</span>
+          <h4>Semantic Interface Fidelity</h4>
+          <p><strong>Schema-F1</strong> measures how well the generated tool interface matches the reference specification in terms of parameter names, types, and structure.</p>
+        </div>
+        <div class="metric-card card-l3">
+          <span class="level-tag tag-l3">L3</span>
+          <h4>Functional Correctness</h4>
+          <p><strong>UT<sub>soft</sub></strong> and <strong>UT<sub>hard</sub></strong> evaluate functional correctness via unit tests with soft (partial match) and hard (exact match) criteria.</p>
+        </div>
+        <div class="metric-card card-l4">
+          <span class="level-tag tag-l4">L4</span>
+          <h4>Downstream Task Utility</h4>
+          <p><strong>SR</strong> (Task Success Rate) measures whether the generated tool can actually be used by an agent to solve the original downstream task.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
@@ -248,5 +325,6 @@ wait for the paper
   </div>
 </footer>
 
+<script src="./static/js/leaderboard.js"></script>
 </body>
 </html>
